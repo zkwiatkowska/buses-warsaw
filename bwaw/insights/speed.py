@@ -136,7 +136,7 @@ def get_full_incidents_summary(data: pd.DataFrame, speed_limit: int) -> Tuple[st
     summary, report = get_short_incidents_summary(data, speed_limit)
     summary += 'Top 3 buses with highest number of incidents were:\n'
 
-    top_3 = report["Lines"].value_counts().sort_values(ascending=False).head(3)
+    top_3 = report["Lines"].value_counts().sort_values(ascending=False).sort_index(ascending=True).head(3)
     top_3 = top_3.apply(lambda x: f'{x} incidents')
     summary += top_3.to_string() + '\n'
 

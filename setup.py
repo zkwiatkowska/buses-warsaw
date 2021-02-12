@@ -15,7 +15,7 @@ setup(
                       'pandas==1.2.0',
                       'tqdm==4.56.0',
                       'pytest==6.2.2',
-                      'mock==4.0.3'
+                      'pytest-mock==3.5.1'
                       ],
 
     classifiers=[

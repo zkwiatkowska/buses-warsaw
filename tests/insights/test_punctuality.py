@@ -22,7 +22,8 @@ def _types_check(func):
 def test_get_punctuality_list_for_bus(mocker):
     """Test for bwaw.insights.punctuality.get_punctuality_list_for_bus"""
     _types_check(get_punctuality_list_for_bus)
-    mocker.patch('bwaw.insights.punctuality._process_online', return_value=TIMETABLE)
+    mocker.patch('bwaw.insights.punctuality.get_timetable_for_line_on_bus_stop',
+                 return_value=TIMETABLE)
     output = [False]
     assert get_punctuality_list_for_bus(ACTIVE_BUSES[ACTIVE_BUSES['Lines'] == '213'],
                                         COORDINATES,
@@ -32,7 +33,8 @@ def test_get_punctuality_list_for_bus(mocker):
 def test_get_punctuality_list_for_buses(mocker):
     """Test for bwaw.insights.punctuality.get_punctuality_list_for_buses"""
     _types_check(get_punctuality_list_for_buses)
-    mocker.patch('bwaw.insights.punctuality._process_online', return_value=TIMETABLE)
+    mocker.patch('bwaw.insights.punctuality.get_timetable_for_line_on_bus_stop',
+                 return_value=TIMETABLE)
     output = {'213': [False], '138': [False]}
     assert get_punctuality_list_for_buses(ACTIVE_BUSES, COORDINATES,
                                           api_key=PROPER_API_KEY) == output
@@ -41,7 +43,8 @@ def test_get_punctuality_list_for_buses(mocker):
 def test_get_punctuality_report(mocker):
     """Test for bwaw.insights.punctuality.get_punctuality_report"""
     _types_check(get_punctuality_report)
-    mocker.patch('bwaw.insights.punctuality._process_online', return_value=TIMETABLE)
+    mocker.patch('bwaw.insights.punctuality.get_timetable_for_line_on_bus_stop',
+                 return_value=TIMETABLE)
     output = 'Percentage of punctuality incidents:\n' \
              '- 213 line: 0.0% incidents.\n' \
              '- 138 line: 0.0% incidents.\n'

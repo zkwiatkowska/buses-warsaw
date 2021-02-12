@@ -10,7 +10,7 @@ from tests.insights import ACTIVE_BUSES, SPEED_INCIDENT, SPEED_INCIDENTS
 def test_get_speed_incidents_for_bus():
     """Test for bwaw.insights.speed.get_speed_incidents_for_bus"""
     with pytest.raises(TypeError):
-        get_speed_incidents_for_bus(pd.DataFrame(columns=['Lon', 'Lat', 'Time', 'Lines']), 50.4)
+        get_speed_incidents_for_bus(pd.DataFrame(columns=['Lon', 'Lat', 'Time', 'Lines', 'Brigade']), 50.4)
 
     with pytest.raises(ValueError):
         get_speed_incidents_for_bus(pd.DataFrame(), 50)
@@ -65,8 +65,8 @@ def test_get_full_incidents_summary():
 
     output = 'Speed limit: 10 km/h.\nTotal number of incidents: 2.\n' \
              '2/2 buses had incidents (100.0%).\n'
-    output += 'Top 3 buses with highest number of incidents were:\n213    1 incidents' \
-              '\n138    1 incidents\n'
+    output += 'Top 3 buses with highest number of incidents were:\n138    1 incidents' \
+              '\n213    1 incidents\n'
     output += 'Top 3 places with highest number of incidents were:\n(52.22, 21.09) - 2 incidents.\n'
 
     assert output == get_full_incidents_summary(ACTIVE_BUSES, 10)[0]
