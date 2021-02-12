@@ -11,6 +11,10 @@ pip install .
 
 ## Where to start
 All code functionality is described in modules docstrings, but also in the prepared notebooks.
+To see notebooks, in the **project root** run:
+```shell script
+jupyter notebook
+```
 Notebooks are stored [here](examples/notebooks):
 - [data download](examples/notebooks/downloading_data.ipynb) - shows how to download and store data,
 - [data analysis](examples/notebooks/data_analysis.ipynb) - shows basic insights that can be extracted from code.
