@@ -1,5 +1,5 @@
 # Buses Warsaw (BWaw)
-Library for downloading and analysing data from API of UM Warsaw. 
+Library for downloading and analysing data from API of [UM Warsaw](https://api.um.warszawa.pl/). This project was done as a part of the *Python for Data Analysis* subject in the Faculty of Mathematics, Informatics and Mechanics of University of Warsaw. 
 
 ## Installation
 In order to install library, you need to clone the repository and run:
@@ -26,4 +26,4 @@ pytest
 ```
 
 ## Other information
-If you need any more information about this code, please contact Zuzanna Kwiatkowska(*zk420176@students.mimuw.edu.pl*).
+If you need any more information about this code, please contact Zuzanna Kwiatkowska (*zk420176@students.mimuw.edu.pl*).
